@@ -64,11 +64,14 @@
             var3 = Number(input3.value);
             varres=(var1)+(var2)+(var3);
            
-            if (varres <= 10 && varres > 0) {
+            if (var1 < 0 || var2 < 0 || var3 < 0) {
+                document.querySelector('#sticker-message').innerHTML='oops! ingresa un número entre el 0 y el 10' ;
+            
+            }   else if (varres <= 10 && varres > 0) {
                 document.querySelector('#sticker-message').innerHTML='Excelente!, llevas: '+ varres +' stickers' ;
 
-            } else if ( varres == 0 ) {
-                document.querySelector('#sticker-message').innerHTML='No has seleccionado ningún sticker!';
+            } else if ( varres == 0 && varres < 0 ) {
+                document.querySelector('#sticker-message').innerHTML='error en la selección!';
 
             } else {
                 document.querySelector('#sticker-message').innerHTML='Uff, seleccionaste más sticker de lo permitido, intenta nuevamente!';
